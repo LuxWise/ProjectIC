@@ -1,4 +1,4 @@
-import { ProjectNav } from "./Components/ProjectNav";
+import { ProjectNav } from "../Components/ProjectNav";
 
 function App() {
   return (

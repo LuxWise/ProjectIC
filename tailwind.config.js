@@ -6,8 +6,14 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        inter: ['Inter', 'sans-serif']
+      },
       colors: {
+        'background': '#eff6ff',
         'project-blue': '#e7e7f8',
+        'project-register' : '#d8daf0',
+        'login' : '#c3c7ee',
       },
     },
   },

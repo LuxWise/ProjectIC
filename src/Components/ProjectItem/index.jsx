@@ -17,7 +17,6 @@ const ProjectItem = (prop) => {
             whileHover={{ scale: 1.04 }}
          >
             <div className='w-8 h-8 rounded-lg bg-orange-600'>
-
             </div>
             {prop.title}
          </motion.section>

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow:{
+        'project-item': '0px 0px 10px rgba(0, 0, 0, 0.15)'
+      },
       fontFamily:{
         inter: ['Inter', 'sans-serif']
       },
@@ -14,6 +17,7 @@ export default {
         'project-blue': '#e7e7f8',
         'project-register' : '#d8daf0',
         'login' : '#c3c7ee',
+        'project-bg' : '#ebebfb',
       },
     },
   },

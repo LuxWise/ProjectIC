@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { NavLink } from 'react-router-dom'
+
 import logo from '../../assets/login.svg'
 import biglogo from '../../assets/Biglogo.svg'
 
@@ -12,11 +14,14 @@ const Login = () => {
                   <p className='font-medium text-lg'>Bienvenido a ProjectCI ¿ya tiene cuenta?</p>
                </div>
             </section>
-            <motion.button type='submit' className='w-64 h-16 mt-7 bg-slate-700 rounded-3xl text-white'
-               whileHover={{scale: 1.05}}
-            >
-               Crear cuenta
-            </motion.button>
+            <NavLink to='/register'>
+               <motion.button type='submit' className='w-60 h-14 mt-7 bg-slate-700 rounded-3xl text-white'
+                  whileHover={{scale: 1.07}}
+                  whileTap={{scale: 0.9}}
+               >
+                  Crear cuenta
+               </motion.button>
+            </NavLink>
          </section>
          
          <section className='flex flex-col gap-7 items-center pt-16 w-full h-full bg-background'>
@@ -28,11 +33,15 @@ const Login = () => {
                <p className='mt-7'>Contraseña</p>
                <input type='password' className='w-full px-3 py-2 ring-1 ring-blue-200 rounded-lg outline-none hover:shadow-md hover:shadow-blue-300 duration-400'/>
             </form>
-            <motion.button type='submit' className='w-48 h-16 mt-7 bg-slate-700 rounded-3xl text-white'
-               whileHover={{scale: 1.05}}
-            >
-               Ingresar
-            </motion.button>
+            <NavLink to='home'>
+               <motion.button type='submit' className='w-40 h-14 mt-7 bg-slate-700 rounded-3xl text-white'
+                  whileHover={{scale: 1.07}}
+                  whileTap={{scale: 0.9}}
+               >
+                  Ingresar
+               </motion.button>
+            </NavLink>
+
          </section>
       </div>
    )

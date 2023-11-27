@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
+
+@layer components {
+  .formRegister {
+    @apply w-full px-3 py-2 ring-1 ring-blue-200 rounded-lg 
+    outline-none hover:shadow-md hover:shadow-blue-300 duration-300
+  }
+}
+
 @tailwind utilities;

@@ -73,15 +73,17 @@ const Login = () => {
             name="contrasenia"
           />
         </form>
-        <motion.button
-          type="submit"
-          className="w-40 h-14 mt-7 bg-slate-700 rounded-3xl text-white"
-          whileHover={{ scale: 1.07 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={onSubmit}
-        >
-          Ingresar
-        </motion.button>
+        <NavLink to={"/home"}>
+          <motion.button
+            type="submit"
+            className="w-40 h-14 mt-7 bg-slate-700 rounded-3xl text-white"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={onSubmit}
+          >
+            Ingresar
+          </motion.button>
+        </NavLink>
       </section>
     </div>
   );

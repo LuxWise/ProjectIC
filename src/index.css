@@ -11,6 +11,10 @@
     @apply w-full px-3 py-2 ring-1 ring-blue-200 rounded-lg 
     outline-none hover:shadow-md hover:shadow-blue-300 duration-300
   }
+  .nav {
+    @apply fixed flex top-0 z-10 items-center w-screen h-16
+    bg-project-blue shadow-md border-b-2 border-slate-300 px-20
+  }
 }
 
 @tailwind utilities;

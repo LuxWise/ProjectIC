@@ -65,24 +65,26 @@ const Register = () => {
             />
           </div>
         </div>
-
-        <div>
-          <label>Codigo</label>
-          <input
-            type="text"
-            className="formRegister"
-            onChange={inputChange}
-            value={body.codigo}
-            name="codigo"
+        <div className="flex gap-3">
+          <div>
+            <label>Codigo</label>
+            <input
+              type="text"
+              className="formRegister"
+              onChange={inputChange}
+              value={body.codigo}
+              name="codigo"
+            />
+          </div>
+          <FormSelect
+            urldata="rol"
+            input={setBody}
+            body={body}
+            name="rol"
+            nombre="Rol"
           />
         </div>
-        <FormSelect
-          urldata="rol"
-          input={setBody}
-          body={body}
-          name="rol"
-          nombre="Rol"
-        />
+
         <div>
           <label>Correo instituciona</label>
           <input

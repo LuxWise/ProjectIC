@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo from "../../assets/login.svg";
 import biglogo from "../../assets/Biglogo.svg";
 import { LogNav } from "../../Components/LogNav";
+import { useAuth } from "../../auth/authProvider";
 
 const Login = () => {
   const [body, setBody] = useState({ usuario: "", contrasenia: "" });
+  const auth = useAuth();
+  const nav = useNavigate();
 
   const inputChange = ({ target }) => {
     const { name, value } = target;
@@ -17,16 +20,27 @@ const Login = () => {
     });
   };
 
-  const onSubmit = () => {
-    axios
-      .post("http://localhost:8080/login", body)
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch(response => {
-        console.error(response);
-      });
+  const onSubmit = event => {
+    event.preventDefault();
+    axios.post("http://localhost:8080/login", body).then(res => {
+      if (res.data.Status === "exito") {
+        if (localStorage.getItem("token")) {
+          localStorage.removeItem("token");
+          localStorage.setItem("token", res.data.Token);
+          nav("/");
+        } else {
+          localStorage.setItem("token", res.data.Token);
+          nav("/");
+        }
+      } else {
+        auth.setAuthError(true);
+      }
+    });
   };
+
+  if (auth.isAuthenticated) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="flex w-full h-full pt-16">

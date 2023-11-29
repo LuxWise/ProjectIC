@@ -7,6 +7,10 @@
     @apply w-full px-3 py-2 ring-1 ring-blue-200 rounded-lg 
     outline-none hover:shadow-md hover:shadow-blue-300 duration-300
   }
+  .formLogin {
+    @apply w-full px-3 py-2 ring-1 ring-blue-200 rounded-lg 
+    outline-none hover:shadow-md hover:shadow-blue-300 duration-300
+  }
 }
 
 @tailwind utilities;

@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
-import biglogo from "../../assets/Biglogo.svg";
 import { useState } from "react";
+import biglogo from "../../assets/Biglogo.svg";
 import axios from "axios";
+import FormSelect from "../../Components/FormSelect";
+import { NavLink } from "react-router-dom";
+import { LogNav } from "../../Components/LogNav";
 
 const Register = () => {
   const [body, setBody] = useState({
@@ -10,6 +13,7 @@ const Register = () => {
     codigo: "",
     correo: "",
     contrasenia: "",
+    rol: "",
   });
 
   const inputChange = ({ target }) => {
@@ -33,6 +37,7 @@ const Register = () => {
 
   return (
     <section className="flex flex-col gap-5 items-center pt-24 w-full h-full bg-background">
+      <LogNav />
       <div className="flex gap-10 items-center justify-center">
         <img src={biglogo} className="w-[100px] h-[100px]" />
         <h1 className="text-3xl text-center font-bold">ProjectCI</h1>
@@ -71,6 +76,13 @@ const Register = () => {
             name="codigo"
           />
         </div>
+        <FormSelect
+          urldata="rol"
+          input={setBody}
+          body={body}
+          name="rol"
+          nombre="Rol"
+        />
         <div>
           <label>Correo instituciona</label>
           <input
@@ -92,15 +104,17 @@ const Register = () => {
           />
         </div>
       </form>
-      <motion.button
-        type="submit"
-        className="w-48 h-14 mt-7 bg-slate-700 rounded-3xl text-white"
-        whileHover={{ scale: 1.07 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={onSubmit}
-      >
-        Crear cuenta
-      </motion.button>
+      <NavLink to="/">
+        <motion.button
+          type="submit"
+          className="w-48 h-14 mt-7 bg-slate-700 rounded-3xl text-white"
+          whileHover={{ scale: 1.07 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={onSubmit}
+        >
+          Crear cuenta
+        </motion.button>
+      </NavLink>
     </section>
   );
 };
